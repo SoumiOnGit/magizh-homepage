@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/83de767d2f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src = "images/logoM.jpg" class ="logo">
+            <ul>
+                <li><a href="header">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class = "header-text">
+            <h1> Welcome to </h1>
+            <h1><span> Magizh Technologies.</span></h1>
+        </div>
+    </div>
+</div>
+<!-----------------------------------about------------------------------------------->
+<div id="About">
+    <div class="=container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/logofull.jpg">
+            </div>
+            <div class="about-col-2">  
+                <h3 class="sub-title">About our </h3>
+                <h2 class="description">6-month Work Integrated Learning Programme </h2>
+                <p>Hello there! Welcome to Magizh Technologies !!! <br>The 6-month Web Development Program offers comprehensive training in Python programming, competitive problem-solving, and practical experiences. With a limited batch size of 15 students, the program includes weekly assessments, group projects, and a 2-month internship. Key highlights include personalized support, collaborative exposure, <br>regular progress tracking, and participation in open hackathons. </p>
+                <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p>The curriculum covers HTML, CSS, Bootstrap, JavaScript, Python (beginner to advanced), competitive programming, cloud computing (MS Azure), Vue JS, database designing, data structures, system design, deployment, and prompt engineering. Internship opportunities open after three months, and placements are available for up to one year from enrollment. <br>Mentors include Mythili M, a Senior Software Engineer, and Gokulakrishnan Muthusamy, a Python Developer and Ex-Academic Affairs Coordinator at IIT Madras BS. </p>
+                <div class="tab-contents onclick" id="experience">
+                    <ul>
+                        <li><span></span></li>
+                       
+                    </ul>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+<div id="Services">
+    <div class="container">
+        <h2 class="sub-title">Our Vision</h2>
+        <div class="services-list">
+            <div>
+                <i class="fas fa-code"></i>
+                <h2>Empowering Future Innovators:</h2>
+                
+                <a href="#">Cultivating a generation of young minds by providing accessible online coding education. We envision a world where every child is equipped with the skills to innovate and shape the future through technology.</a>
+            </div>
+
+            <div>
+                <i class="fab fa-python"></i>
+                <h2>Pioneering Tech Excellence:</h2>
+               
+                <a href="#">Striving to be at the forefront of cutting-edge technologies, our vision is to inspire curiosity and mastery in coding. We aim to be the catalyst for a new era of tech-savvy individuals who drive advancements in diverse fields.</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2>Elevating Skills, Transforming Futures:</h2>
+                <a href="#">Our vision extends beyond teaching coding; it's about elevating skills and transforming futures. We aspire to bridge educational gaps, instilling confidence in children to navigate the digital landscape with competence and creativity.</a>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+<!----contact----->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Us</h1>
+                <p><i class="fa-sharp fa-solid fa-envelope"></i>info@magizhtechnologies.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 9342 209 140</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/magizh-technologies/"><i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.instagram.com/magizh_tech/"><i class="fa-brands fa-instagram"></i>
+                    <a href="https://twitter.com/magizh_tech"><i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email " required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" ></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright </p>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links"); 
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classlist.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classlist.remove("active-tab");
+        }
+        event.currentTarget.classlist.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz5MsDbrmSbFJN8zqrIZ9wfTsy4AQ4krwr4gDmOP4B47u1y6S_JCNgZmU0yJAmwaIfr/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
